@@ -1,0 +1,175 @@
+
+/* Home page */
+
+/* home_picture start */
+
+.user-navbar {
+	padding: 5px;
+}
+.search-form {
+	margin-left: 250px;
+}
+.search-form input {
+	width: 500px !important;
+	border-radius: 15px;
+}
+
+.search-form button {
+	border-radius: 15px;
+	padding: 5px;
+	width: 100px;
+	background-color: #c3b7b8;
+	font-family: 'lato';
+}
+
+.search-form button:hover {
+	background-color: #ece3e3;
+}
+
+.links ul {
+	margin-right: 40px;
+}
+.links ul li {
+	margin-right: 10px;
+}
+
+.links ul li:hover {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.navbar-expand-lg  {
+	background-color: #1c5996!important;
+}
+
+.navbar div a.navbar-brand,
+.navbar div ul li a.nav-link  {
+	color: #fff!important;
+}
+
+.navbar span.logo {
+	background-color: #fff;
+	color: #1c5996;
+	padding: 8px;
+	border-radius: 10px 20px;
+}
+
+.home_picture .carousel-inner {
+	height: 600px;
+	background-repeat: no-repeat;
+	background-origin: content-box;
+	background-size: cover;
+	margin-top: -30px;
+}
+
+.home_picture .background_text{
+	padding-top: 180px;
+	padding-left: 40px;
+}
+
+
+.home_picture .background_text p:nth-child(1){
+	font-size: 60px;
+	margin-bottom: 0px;
+	color: #fff;
+}
+
+.home_picture .background_text p:nth-child(2){
+	font-size: 25px;
+	color:#CCCCCC;
+}
+
+.home_picture .background_text p strong {
+	color: #1c5996;
+}
+
+.home_picture .background_text p span.number {
+	color: #1c5996;
+}
+
+.home_picture .background_text a{
+	width: 200px;
+	margin-top: 25px;
+	font-weight: 400;
+	border-radius: 30px;
+	padding: 10px;
+	font-size: 22px;
+}
+
+.home_picture .background_text a.courses{
+	margin-left: 10px;
+	border-color: #fff;
+	color: #1c5996;
+}
+
+.home_picture .background_text a.courses:hover{
+	background-color:  #1c5996;
+	color: #fff;
+	border-color: #1c5996;
+}
+.btn-primary
+{
+	background-color: #1c5996;
+	border-color: #1c5996;
+}
+
+
+
+
+
+/* home_picture end*/
+
+
+
+
+/*footer start*/
+
+
+.page-footer
+{
+	background-color: #1c5996;
+}
+
+.page-footer .row > .col-md-4
+{
+	color: #fff;
+}
+
+.page-footer .row .col-md-2
+{
+	color: #fff;
+}
+
+.page-footer .row .col-md-2 ul li a
+{
+	color: #bdbdbd;
+	text-decoration: none;
+}
+
+.page-footer ul li h5
+{
+	color: #fff;
+}
+
+.page-footer ul li .btn
+{
+	border-radius: 30px;
+	padding: 10px;
+	width: 125px;
+	font-weight: bold;
+}
+
+footer .footer-copyright
+{
+	background-color: #0c3763;
+	color: #bdbdbd;
+}
+
+footer video
+{
+	cursor: pointer;
+}
+
+
+/* footer end */
+

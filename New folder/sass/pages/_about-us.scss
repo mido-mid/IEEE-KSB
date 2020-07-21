@@ -1,0 +1,33 @@
+.section-about-us {
+  padding: 8rem 0;
+
+  .row:not(:last-child) {
+    padding-bottom: 8rem;
+  }
+}
+
+.section-vision-mission {
+  .text-box {
+    .paragraph {
+      border-left: 3px solid $color-main-1;
+      padding-left: 1rem;
+    }
+  }
+
+  .row:not(:last-child) {
+    padding-bottom: 8rem;
+  }
+}
+
+.about-ieee {
+  padding: 10rem 0 8rem 0;
+
+  .paragraph {
+    padding-left: 3rem;
+
+    @include respond(tab-port) { // width < 900?
+      padding-top: 2rem;
+      padding-left: 0;
+    }
+  }
+}

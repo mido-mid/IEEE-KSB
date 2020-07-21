@@ -1,0 +1,28 @@
+.header-slider .carousel-inner {
+	height: 80vh;
+}
+
+.sub-header {
+	// padding-top: 8rem;
+	height: 40vh;
+	background-color: $color-main-1;
+	color: $color-white;
+	position: relative;
+	
+	.text-box {
+		position: absolute;
+		top: 60%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		width: 80%;
+
+		.heading-primary {
+			padding-bottom: 2rem;
+		}
+
+		.paragraph {
+			color: $color-white;
+		}
+	}
+}

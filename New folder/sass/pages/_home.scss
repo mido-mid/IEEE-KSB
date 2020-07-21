@@ -1,0 +1,36 @@
+.section-who-we-are {
+  padding: 8rem 0;
+
+  .col-md-12:not(:last-child) {
+    @include respond(tab-port) { // width < 900?
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.section-last-works {
+  .col-md-12:not(:last-child) {
+    @include respond(tab-port) { // width < 900?
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.section-last-articles {
+  padding: 8rem 0;
+  .col-md-12:not(:last-child) {
+    @include respond(tab-port) { // width < 900?
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.section-volunteers {
+  padding-bottom: 8rem;
+
+  .col-md-12:not(:last-child) {
+    @include respond(tab-port) { // width < 900?
+      margin-bottom: 2rem;
+    }
+  }
+}

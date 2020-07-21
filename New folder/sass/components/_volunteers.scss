@@ -1,0 +1,56 @@
+.volunteer-img-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  height: 30rem;
+
+  .text-box-container {
+    position: relative;
+    height: 100%;
+    transition: all .4s;
+
+    .text-box {
+      position: absolute;
+      top: 60%;
+      right: .5rem;
+      width: 35%;
+      display: none;
+      transition: all .4s;
+
+      .volunteer-name,
+      .volunteer-job {
+        display: block;
+        text-transform: capitalize;
+        color: $color-white;
+      }
+
+      .volunteer-name {
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-bottom: .5rem;
+      }
+
+      .volunteer-job {
+        font-weight: 400;
+        font-size: 1.1rem;
+      }
+    }
+
+    &:hover {
+      background-image: linear-gradient(
+      105deg,
+      transparent 0%,
+      transparent 60%,
+      rgba($color-main-1, .6) 60%);
+
+      .text-box {
+        display: block;
+      }
+    }
+  }
+
+  &-1 {
+    background-image: url("../assets/volunteer-3.png");
+    background-position: center;
+  }
+}

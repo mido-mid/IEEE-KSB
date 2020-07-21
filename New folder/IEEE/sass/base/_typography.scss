@@ -1,0 +1,24 @@
+body {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  word-spacing: 1px;
+  letter-spacing:.7px
+}
+
+.heading-secondary {
+  font-size: 3rem;
+  color: $color-main-2;
+  text-transform: uppercase;
+}
+
+.heading-quaternary {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $color-white;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+  color: $color-light-grey-1;
+}

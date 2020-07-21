@@ -1,0 +1,58 @@
+.section-our-team {
+  padding: 8rem 0;
+
+  .row:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .col-md-12:not(:last-child) {
+    @include respond(tab-port) { // width < 900?
+      margin-bottom: 2rem;
+    }
+  }
+
+  .accordion {
+    .card {
+      border: none;
+    
+      .card-header {
+        background-color: $color-white;
+        border: none;
+        .member-name {
+          font-size: 1.6rem;
+          font-weight: 700;
+          color: $color-black;
+        }
+        .member-role {
+          font-size: 1.4rem;
+          color: $color-light-grey-1;
+        }
+      }
+
+      .card-body {
+        padding: 1rem !important;
+
+        .member-link {
+          &:link,
+          &:visited {
+            color: $color-light-grey-1;
+            text-decoration: none;
+            display: block;
+            transition: all .3s;
+          }
+
+          &:hover,
+          &:active {
+            color: $color-main-1;
+            transform: scale(1.05);
+          }
+        }
+      }
+
+      .arrow-icon {
+        padding-top: 1rem;
+        font-size: 2rem;
+      }
+    }
+  }
+}
