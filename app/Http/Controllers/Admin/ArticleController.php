@@ -45,10 +45,11 @@ class ArticleController extends Controller
         //
 
         $rules = [
-            'title' => 'required|min:7|max:100',
-            'description' => 'required|min:10|max:200',
+            'title' => ['required','min:7','max:100','not_regex:/([%\$#\*<>]+)/'],
+            'description' => ['required','min:10','max:200','not_regex:/([%\$#\*<>]+)/'],
             'link' => 'required|url',
             'date' => 'required|date',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
 
         $this->validate($request,$rules);
@@ -112,16 +113,17 @@ class ArticleController extends Controller
     {
         //
         $rules = [
-            'title' => 'required|min:7|max:100',
-            'description' => 'required|min:10|max:200',
+            'title' => ['required','min:7','max:100','not_regex:/([%\$#\*<>]+)/'],
+            'description' => ['required','min:10','max:200','not_regex:/([%\$#\*<>]+)/'],
             'link' => 'required|url',
             'date' => 'required|date',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
 
         $this->validate($request, $rules);
 
         $article->update($request->all());
-  
+
         if($file = $request->file('image')) {
 
             $filename = $file->getClientOriginalName();

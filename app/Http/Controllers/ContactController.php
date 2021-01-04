@@ -24,14 +24,14 @@ class ContactController extends Controller
     public function send(Request $request)
     {
 
-        $user = User::where('admin', 1)->first();
+        $user = User::where('email', 'mohamedosama12w32@gmail.com')->first();
 
 
         $rules = [
-            'name' => 'required|string|min:5|max:40',
-            'email' => 'required|email',
-            'subject' => 'required|min:5|max:40',
-            'message' => 'required|string',
+            'name' => ['required','min:2','max:60','not_regex:/([%\$#\*<>]+)/'],
+            'email' => ['required', 'email', 'regex:/^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,3}$/'],
+            'subject' => ['required','min:2','max:60','not_regex:/([%\$#\*<>]+)/'],
+            'message' => ['required','min:2','max:60','not_regex:/([%\$#\*<>]+)/']
         ];
 
         $this->validate($request, $rules);
@@ -43,7 +43,7 @@ class ContactController extends Controller
 
         Mail::to($user->email)->send(new contact($name,$email,$subject,$message));
 
-        return view('contact');
+        return redirect()->route('contacts')->withStatus('your response has been sent successfully');
 
     }
 }

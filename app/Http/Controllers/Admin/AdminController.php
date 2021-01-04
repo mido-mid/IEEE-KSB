@@ -83,9 +83,9 @@ class AdminController extends Controller
     {
         //
         $rules = [
-            'name' => 'required|string|min:5|max:30',
-            'email' => 'required|email',
-            'password' => 'nullable|min:6|confirmed',
+            'name' => ['required','string','min:3','max:100','not_regex:/([%\$#\*<>]+)/'],
+            'email' => ['required','email','regex:/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i'],
+            'password' => ['nullable','min:8','confirmed','regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/'],
         ];
 
         $this->validate($request, $rules);

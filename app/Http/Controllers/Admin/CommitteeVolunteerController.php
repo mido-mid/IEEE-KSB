@@ -32,9 +32,9 @@ class CommitteeVolunteerController extends Controller
         //
 
         $rules = [
-            'eng_name' => 'required|min:7|max:200',
-            'arab_name' => 'required|min:7|max:200',
-            'gmail' => 'required|email',
+            'eng_name' => ['required','min:3','max:100','not_regex:/([%\$#\*<>]+)/'],
+            'arab_name' => ['required','min:3','max:100','not_regex:/([%\$#\*<>]+)/'],
+            'gmail' => ['required', 'email', 'regex:/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i'],
             'linkedin' => 'required|url',
             'committee_id' => 'required|integer',
             'role_id' => 'required|integer',

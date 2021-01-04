@@ -9,15 +9,15 @@
             <div class="col-lg-6 col-md-8">
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-header bg-transparent pb-5">
-                        <div class="text-muted text-center mt-2 mb-4"><small>{{ __('Sign up with') }}</small></div>
-                        <div class="text-center">
-                            <a href="#" class="btn btn-neutral btn-icon mr-4">
-                                <span class="btn-inner--icon"><img src="{{ asset('argon') }}/img/icons/common/github.svg"></span>
-                                <span class="btn-inner--text">{{ __('Github') }}</span>
+                        <div class="text-muted text-center mt-2 mb-3"><small>{{ __('Sign in for better learning experience') }}</small></div>
+                        <div class="btn-wrapper text-center">
+                            <a href="{{ route('register') }}" class="btn btn-neutral btn-icon">
+                                <span class="btn-inner--icon"><i class="ni ni-circle-08"></i></span>
+                                <span class="btn-inner--text">{{ __('Register') }}</span>
                             </a>
-                            <a href="#" class="btn btn-neutral btn-icon">
-                                <span class="btn-inner--icon"><img src="{{ asset('argon') }}/img/icons/common/google.svg"></span>
-                                <span class="btn-inner--text">{{ __('Google') }}</span>
+                            <a href="{{ route('login') }}" class="btn btn-neutral btn-icon">
+                                <span class="btn-inner--icon"><i class="ni ni-key-25"></i></span>
+                                <span class="btn-inner--text">{{ __('Login') }}</span>
                             </a>
                         </div>
                     </div>
@@ -73,19 +73,6 @@
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
                                     <input class="form-control" placeholder="{{ __('Confirm Password') }}" type="password" name="password_confirmation" required>
-                                </div>
-                            </div>
-                            <div class="text-muted font-italic">
-                                <small>{{ __('password strength') }}: <span class="text-success font-weight-700">{{ __('strong') }}strong</span></small>
-                            </div>
-                            <div class="row my-4">
-                                <div class="col-12">
-                                    <div class="custom-control custom-control-alternative custom-checkbox">
-                                        <input class="custom-control-input" id="customCheckRegister" type="checkbox">
-                                        <label class="custom-control-label" for="customCheckRegister">
-                                            <span class="text-muted">{{ __('I agree with the') }} <a href="#!">{{ __('Privacy Policy') }}</a></span>
-                                        </label>
-                                    </div>
                                 </div>
                             </div>
                             <div class="text-center">

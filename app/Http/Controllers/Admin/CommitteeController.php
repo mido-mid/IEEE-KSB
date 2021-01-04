@@ -43,7 +43,7 @@ class CommitteeController extends Controller
         //
 
         $rules = [
-            'name' => 'required|min:3|max:50',
+            'name' => ['required','min:2','max:60','not_regex:/([%\$#\*<>]+)/'],
         ];
 
         $this->validate($request, $rules);
@@ -91,7 +91,7 @@ class CommitteeController extends Controller
     {
         //
         $rules = [
-            'name' => 'required|min:3|max:50',
+            'name' => ['required','min:2','max:60','not_regex:/([%\$#\*<>]+)/'],
         ];
 
         $this->validate($request, $rules);

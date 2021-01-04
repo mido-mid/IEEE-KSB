@@ -11,7 +11,7 @@
             <div class="text-box u-padding-top-huge">
               <h2 class="heading-secondary u-margin-bottom-huge">who we are?</h2>
               <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum fugiat quis omnis, voluptates et doloremque quaerat possimus architecto vitae quas!</p>
-              <a href="#" class="button button-1 u-padding-top-huge">read more</a>
+              <a href="{{route('about')}}" class="button button-1 u-padding-top-huge">read more</a>
             </div>
           </div>
           <div class="col-lg-7 col-md-12">
@@ -27,7 +27,6 @@
           <div class="col-lg-12">
             <div class="d-flex justify-content-between">
             <h2 class="heading-secondary">last works</h2>
-            <a href="#" class="button button-1">see all</a>
             </div>
           </div>
         </div>
@@ -72,7 +71,7 @@
           <div class="col-lg-12">
             <div class="d-flex justify-content-between">
             <h2 class="heading-secondary">last articles</h2>
-            <a href="#" class="button button-1">see all</a>
+            <a href="{{route('articles')}}" class="button button-1">see all</a>
             </div>
           </div>
         </div>
@@ -86,8 +85,8 @@
               <img style="width:100%;height:180px;" src="{{ asset('images') }}/footer-img.png" class="card-img-top" alt="Image of the work">
             @endif
               <div class="card-body">
-                <h3 class="card-title">{{$article->title}}</h3>
-                <p class="card-text paragraph">{{$article->description}}</p>
+                <h3 class="card-title">{{ \Str::limit($article->title,10) }}</h3>
+                <p class="card-text paragraph">{{ \Str::limit($article->description, 100) }}</p>
                 <a href="{{$article->link}}" class="button button-1 my-3"><i class="fas fa-external-link-alt mr-3"></i>read more</a>
                 <p class="card-text text-right"><small class="text-muted">{{$article->date}}</small></p>
               </div>
@@ -105,7 +104,7 @@
             <div class="col-lg-12">
               <div class="d-flex justify-content-between">
               <h2 class="heading-secondary">Our Web Development Team</h2>
-              <a href="#" class="button button-1">see all</a>
+              <a href="{{route('volunteers')}}" class="button button-1">see all</a>
               </div>
             </div>
           </div>

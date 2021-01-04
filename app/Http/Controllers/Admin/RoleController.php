@@ -42,7 +42,7 @@ class RoleController extends Controller
         //
 
         $rules = [
-            'name' => 'required|min:3|max:50',
+            'name' => ['required','min:2','max:60','not_regex:/([%\$#\*<>]+)/'],
         ];
 
         $this->validate($request, $rules);
@@ -89,7 +89,7 @@ class RoleController extends Controller
     {
         //
         $rules = [
-            'name' => 'required|min:3|max:50',
+            'name' => ['required','min:2','max:60','not_regex:/([%\$#\*<>]+)/'],
         ];
 
         $this->validate($request, $rules);
@@ -101,7 +101,7 @@ class RoleController extends Controller
             $role->save();
             return redirect('/admin/roles')->withStatus('role successfully updated.');
         }else {
-            return redirect('/admin/roles/'.$committee->id.'/edit')->withStatus('Nothing Changed.');
+            return redirect('/admin/roles/'.$role->id.'/edit')->withStatus('Nothing Changed.');
         }
     }
 
@@ -114,7 +114,6 @@ class RoleController extends Controller
     public function destroy(Role $role)
     {
         //
-
         $role->delete();
         return redirect('/admin/roles')->withStatus('role successfully deleted.');
     }

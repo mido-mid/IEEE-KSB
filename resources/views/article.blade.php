@@ -5,13 +5,13 @@
     <div class="sub-header">
       <div class="text-box">
         <h1 class="heading-primary">
-          
+
         @if($year == null)
           Articles
         @else
           Articles in {{$year}}
         @endif
-      
+
         </h1>
         <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus natus sed quisquam impedit aut doloremque unde a distinctio, ipsum ex.</p>
       </div>
@@ -45,8 +45,8 @@
                 <img src="{{ asset('images') }}/footer-img.png" style="width:100%;height:170px;" class="card-img-top" alt="Image of the work">
               @endif
               <div class="card-body">
-                <h3 class="card-title">{{$article->title}}</h3>
-                <p class="card-text paragraph">{{$article->description}}</p>
+                <h3 class="card-title">{{ \Str::limit($article->title,10) }}</h3>
+                <p class="card-text paragraph">{{ \Str::limit($article->description, 100) }}</p>
                 <a href="{{$article->link}}" class="button button-1 my-3"><i class="fas fa-external-link-alt mr-3"></i>read more</a>
                 <p class="card-text text-right"><small class="text-muted">{{$article->date}}</small></p>
               </div>
@@ -56,12 +56,12 @@
         </div>
       @else
         <p class="lead text-center"> No articles found</p>
-      @endif         
+      @endif
         <div class="card-footer py-4">
           <nav class="d-flex justify-content-end" aria-label="...">
             {{ $articles->links() }}
           </nav>
-        </div> 
+        </div>
       </div>
     </section>
   </main>
