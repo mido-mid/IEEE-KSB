@@ -16,7 +16,7 @@
       @if(count($volunteers) > 0)
         <div class="row">
         @foreach($volunteers as $volunteer)
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-4 col-md-12" style="margin-bottom: 15px;margin-top: 15px;">
               <div class="card">
               @if($volunteer->photo)
                 <img src="{{ asset('images') }}/{{$volunteer->photo->filename}}" style="width:100%;height:170px;" class="card-img-top" alt="Image of the work">
@@ -39,7 +39,7 @@
                           </button>
                         </h3>
                       </div>
-                  
+
                       <div id="{{$volunteer->id}}" class="collapse" aria-labelledby="memberOne" data-parent="#accordionExample">
                         <div class="card-body">
                           <a href="{{$volunteer->linkedin}}" target="_blank" class="d-block member-link"><i class="fab fa-linkedin-in pr-3"></i>{{$volunteer->linkedin}}</a>
@@ -51,16 +51,16 @@
                 </div>
               </div>
             </div>
-            @endforeach        
+            @endforeach
         </div>
         @else
           <p class="lead text-center"> No volunteers found</p>
-        @endif 
+        @endif
         <div class="card-footer py-4">
             <nav class="d-flex justify-content-end" aria-label="...">
                 {{ $volunteers->links() }}
             </nav>
-          </div>     
+          </div>
       </div>
     </section>
   </main>

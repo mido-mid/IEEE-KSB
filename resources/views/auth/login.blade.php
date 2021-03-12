@@ -7,16 +7,11 @@
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-7">
                 <div class="card bg-secondary shadow border-0">
-                    <div class="card-header bg-transparent pb-5">
-                        <div class="text-muted text-center mt-2 mb-3"><small>{{ __('Sign in for better learning experience') }}</small></div>
+                    <div class="card-header bg-transparent pb-5" style="margin-bottom: -70px">
+                        <div class="text-muted text-center mt-2 mb-3"><small>{{ __('Sign in to enter IEEE admin panel') }}</small></div>
                         <div class="btn-wrapper text-center">
-                            <a href="{{ route('register') }}" class="btn btn-neutral btn-icon">
-                                <span class="btn-inner--icon"><i class="ni ni-circle-08"></i></span>
-                                <span class="btn-inner--text">{{ __('Register') }}</span>
-                            </a>
-                            <a href="{{ route('login') }}" class="btn btn-neutral btn-icon">
-                                <span class="btn-inner--icon"><i class="ni ni-key-25"></i></span>
-                                <span class="btn-inner--text">{{ __('Login') }}</span>
+                            <a class="navbar-brand" href="{{ route('home') }}">
+                                <img src="{{ asset('images') }}/logo.png" />
                             </a>
                         </div>
                     </div>
@@ -64,11 +59,11 @@
                             </a>
                         @endif
                     </div>
-                    <div class="col-6 text-right">
-                        <a href="{{ route('register') }}" class="text-light">
-                            <small>{{ __('Create new account') }}</small>
-                        </a>
-                    </div>
+{{--                    <div class="col-6 text-right">--}}
+{{--                        <a href="{{ route('register') }}" class="text-light">--}}
+{{--                            <small>{{ __('Create new account') }}</small>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>

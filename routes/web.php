@@ -25,6 +25,7 @@ Route::get('/about', 'AboutController@index')->name('about');
 Route::get('/articles', 'ArticleController@index')->name('articles');
 Route::post('/articles', 'ArticleController@filter')->name('articles');
 Route::get('/volunteers', 'VolunteerController@index')->name('volunteers');
+Route::get('/events', 'EventController@index')->name('volunteers');
 Route::get('/contact', 'ContactController@index')->name('contacts');
 
 Route::post('/contact', 'ContactController@send')->name('contactpost');
@@ -42,7 +43,7 @@ Route::get('/logout',function(){
 	}
 })->name('logout');
 
-// Admin Routes 
+// Admin Routes
 
 Route::group(['middleware' => 'auth'], function () {
 
@@ -54,6 +55,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('/admin/admins', 'Admin\AdminController');
 	Route::resource('/admin/volunteers', 'Admin\VolunteerController');
 	Route::resource('/admin/articles', 'Admin\ArticleController');
+    Route::resource('/admin/events', 'Admin\EventController');
 	Route::resource('/admin/roles', 'Admin\RoleController');
 	Route::resource('/admin/committees', 'Admin\CommitteeController');
 	Route::resource('/admin/committees.volunteers', 'Admin\CommitteeVolunteerController');

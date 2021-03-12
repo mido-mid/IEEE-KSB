@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('Admin Management')])
 
 @section('content')
-    @include('admin.admins.partials.header', ['title' => __('Add Article')])   
+    @include('admin.admins.partials.header', ['title' => __('Add Article')])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -45,7 +45,7 @@
                                 <div class="form-group{{ $errors->has('link') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-password">{{ __('link') }}</label>
                                     <input type="text" name="link" id="input-link" class="form-control form-control-alternative{{ $errors->has('link') ? ' is-invalid' : '' }}" placeholder="{{ __('link') }}" value="" required>
-                                    
+
                                     @if ($errors->has('link'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('link') }}</strong>
@@ -55,7 +55,7 @@
                                 <div class="form-group{{ $errors->has('date') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-date">{{ __('date') }}</label>
                                     <input type="date" name="date" id="input-date" class="form-control form-control-alternative{{ $errors->has('date') ? ' is-invalid' : '' }}" placeholder="{{ __('date') }}" value="" required>
-                                    
+
                                     @if ($errors->has('date'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('date') }}</strong>
@@ -66,7 +66,7 @@
                                 <div class="form-group{{ $errors->has('image') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-image">{{ __('image') }}</label>
                                     <input type="file" name="image" id="input-image" class="form-control form-control-alternative{{ $errors->has('image') ? ' is-invalid' : '' }}" required>
-                                    
+
                                     @if ($errors->has('image'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('image') }}</strong>
@@ -83,7 +83,7 @@
                 </div>
             </div>
         </div>
-        
+
         @include('layouts.footers.auth')
     </div>
 @endsection

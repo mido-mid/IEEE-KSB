@@ -154,7 +154,7 @@ class VolunteerController extends Controller
                 }
             }
 
-            return redirect('/admin/volunteers')->withStatus('volunteer successfully created.');
+            return redirect('/admin/volunteers')->withStatus('volunteer successfully updated.');
 
     }
 

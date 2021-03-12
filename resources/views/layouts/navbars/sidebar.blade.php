@@ -117,6 +117,11 @@
                         <i class="fas fa-users text-orange"></i> {{ __('Committees') }}
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('events.index') }}">
+                        <i class="fas fa-users text-orange"></i> {{ __('Events') }}
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

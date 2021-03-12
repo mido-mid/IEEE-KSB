@@ -30,7 +30,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
 
         <div class="container-fluid user-navbar">
-             
+
             <a class="navbar-brand" href="#"><span class="logo">KFS</span> IEEE KSB</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -50,6 +50,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('articles') }}">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('events') }}">events</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contacts') }}">Contact us</a>
@@ -85,7 +88,7 @@
                         @endauth
                     </li>
                 </ul>
-            
+
             </div>
         </div>
     </nav>
@@ -94,8 +97,8 @@
 
 
     @include('includes.footer')
-    
-        <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>  
+
+        <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
         <script src="{{ asset('js') }}/script.js"></script>
         <script src="{{ asset('js') }}/jquery-3.5.1.min.js">
         //<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

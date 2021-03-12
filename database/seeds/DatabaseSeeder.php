@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
 
         factory('App\Article', 20)->create();
 
+        factory('App\Event', 20)->create();
+
         factory('App\Photo', 70)->create();
     }
 }

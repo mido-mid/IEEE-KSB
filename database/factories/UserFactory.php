@@ -2,6 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+use App\Event;
 use App\User;
 use App\Volunteer;
 use App\Article;
@@ -49,9 +50,9 @@ $factory->define(Committee::class, function (Faker $faker) {
 
 
 $factory->define(Article::class, function (Faker $faker) {
-    
+
     $title = $faker->sentence;
-    
+
     return [
         'title' => $title,
         'description' => $faker->paragraph,
@@ -60,10 +61,24 @@ $factory->define(Article::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(Volunteer::class, function (Faker $faker) {
-    
+$factory->define(Event::class, function (Faker $faker) {
+
     $title = $faker->sentence;
-    
+    $startingDate = $faker->dateTimeBetween('next Monday', 'next Monday +7 days');
+
+    return [
+        'title' => $title,
+        'description' => $faker->paragraph,
+        'start_date' => $startingDate,
+        'end_date' => $faker->dateTimeBetween($startingDate, $startingDate->format('Y-m-d').' +2 days'),
+        'link' => $faker->url
+    ];
+});
+
+$factory->define(Volunteer::class, function (Faker $faker) {
+
+    $title = $faker->sentence;
+
     return [
         'arab_name' => $faker->word,
         'eng_name' => $faker->word,
