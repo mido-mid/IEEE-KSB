@@ -21,7 +21,7 @@
       <hr class="clearfix w-100 d-md-none">
 
       <div class="col-md-2 mx-auto">
-        
+
         <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
 
         <ul class="list-unstyled">
@@ -55,7 +55,7 @@
     </div>
 
   </div>
- 
+
 
   <hr>
 

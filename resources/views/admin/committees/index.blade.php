@@ -26,18 +26,23 @@
                         @endif
                     </div>
 
-                    <form method="POST" action="{{ route('committees.store') }}" autocomplete="off"> 
+                    <form method="POST" action="{{ route('committees.store') }}" autocomplete="off">
                         @csrf
                         <div class="row">
                             <div class="col-sm-10 ml-2">
                                 <div class="form-group">
-                                    <input placeholder="Committee Name..." type="text" name="name" class="form-control">
+                                    <input placeholder="Committee Name..." type="text" name="name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name') }}">
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-sm">
                                 <input class="btn btn-primary" type="submit" value="Add committee" name="addcommittee">
                             </div>
-                        </div>    
+                        </div>
                     </form>
                 @if(count($committees) > 0)
                     <div class="table-responsive">
@@ -63,13 +68,13 @@
                                                     <form action="{{ route('committees.destroy', $committee) }}" method="post">
                                                         @csrf
                                                         @method('delete')
-                                                        
+
                                                         <a class="dropdown-item" href="{{ route('committees.edit', $committee) }}">{{ __('Edit') }}</a>
                                                         <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this committee?") }}') ? this.parentElement.submit() : ''">
                                                             {{ __('Delete') }}
                                                         </button>
-                                                    </form>    
-                                                    
+                                                    </form>
+
                                                 </div>
                                             </div>
                                         </td>
@@ -89,7 +94,7 @@
                 </div>
             </div>
         </div>
-            
+
         @include('layouts.footers.auth')
     </div>
 @endsection

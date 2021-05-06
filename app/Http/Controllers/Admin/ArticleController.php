@@ -117,7 +117,7 @@ class ArticleController extends Controller
             'description' => ['required','min:10','max:200','not_regex:/([%\$#\*<>]+)/'],
             'link' => 'required|url',
             'date' => 'required|date',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
 
         $this->validate($request, $rules);

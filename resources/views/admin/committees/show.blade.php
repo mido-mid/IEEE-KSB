@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('Committees Management')])
 
 @section('content')
-    @include('admin.admins.partials.header', ['title' => __('Show Committee')])   
+    @include('admin.admins.partials.header', ['title' => __('Show Committee')])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -16,6 +16,17 @@
                             <a href="{{ route('committees.volunteers.create', $committee) }}" class="btn btn-sm btn-primary">{{ __('Add volunteer') }}</a>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="col-12">
+                        @if (session('status'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('status') }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
                     </div>
                     @if(count($committee->volunteers))
 
@@ -32,7 +43,7 @@
                                     <h5 class="card-title">{{ \Str::limit($volunteer->eng_name, 20) }}</h5>
 
                                     <form  method="POST" action="{{ route('volunteers.destroy', $volunteer) }}">
-                                        
+
                                         @csrf
                                         @method('DELETE')
                                         <a href="{{ route('volunteers.edit', $volunteer) }}" class="btn btn-primary btn-sm">Edit</a>
@@ -42,7 +53,7 @@
                                             {{ __('Delete') }}
                                         </button>
                                     </form>
-                                
+
                                 </div>
                             </div>
                         </div>
@@ -56,7 +67,7 @@
                 </div>
             </div>
         </div>
-        
+
         @include('layouts.footers.auth')
     </div>
 @endsection

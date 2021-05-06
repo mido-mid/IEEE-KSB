@@ -2,7 +2,7 @@
 
 @section('content')
     @include('layouts.headers.cards')
-    
+
     <div class="container-fluid mt--7">
         <div class="row">
             <div class="col-xl-7 mb-5 mb-xl-0">
@@ -46,12 +46,12 @@
                                                         <form action="{{ route('admins.destroy', $admin) }}" method="post">
                                                             @csrf
                                                             @method('delete')
-                                                            
+
                                                             <a class="dropdown-item" href="{{ route('admins.edit', $admin) }}">{{ __('Edit') }}</a>
                                                             <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this admin?") }}') ? this.parentElement.submit() : ''">
                                                                 {{ __('Delete') }}
                                                             </button>
-                                                        </form>    
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </td>
@@ -74,38 +74,39 @@
                                 </div>
                             </div>
                         </div>
-                        @if(count($roles))
+                        @if(count($events))
                         <div class="table-responsive">
                                 <table class="table align-items-center table-flush">
                                     <thead class="thead-light">
                                         <tr>
                                             <th scope="col">{{ __('name') }}</th>
-                                            <th scope="col">{{ __('no. of volunteers') }}</th>
+                                            <th scope="col">{{ __('start date') }}</th>
+                                            <th scope="col">{{ __('end date') }}</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($roles as $role)
+                                        @foreach ($events as $event)
                                             <tr>
-                                                <td><a href="{{ route('admins.show', $admin) }}">{{ $role->name }}</a></td>
+                                                <td><a href="{{ route('events.show', $event) }}">{{ $event->title }}</a></td>
 
-                                                <td>{{ count($role->volunteers) }}</td>
-
+                                                <td>{{ $event->start_date }}</td>
+                                                <td>{{ $event->end_date }}</td>
                                                 <td class="text-right">
                                                     <div class="dropdown">
                                                         <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             <i class="fas fa-ellipsis-v"></i>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                            <form action="{{ route('roles.destroy', $role) }}" method="post">
+                                                            <form action="{{ route('events.destroy', $event) }}" method="post">
                                                                 @csrf
                                                                 @method('delete')
-                                                                
-                                                                <a class="dropdown-item" href="{{ route('roles.edit', $role) }}">{{ __('Edit') }}</a>
-                                                                <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this role?") }}') ? this.parentElement.submit() : ''">
+
+                                                                <a class="dropdown-item" href="{{ route('events.edit', $event) }}">{{ __('Edit') }}</a>
+                                                                <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this event?") }}') ? this.parentElement.submit() : ''">
                                                                     {{ __('Delete') }}
                                                                 </button>
-                                                            </form>    
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -115,7 +116,7 @@
                                 </table>
                             </div>
                         @else
-                            <p class="lead text-center"> No roles found</p>
+                            <p class="lead text-center"> No events found</p>
                         @endif
                     @endif
                 </div>
@@ -160,12 +161,12 @@
                                                         <form action="{{ route('volunteers.destroy', $volunteer) }}" method="post">
                                                             @csrf
                                                             @method('delete')
-                                                            
+
                                                             <a class="dropdown-item" href="{{ route('volunteers.edit', $volunteer) }}">{{ __('Edit') }}</a>
                                                             <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this volunteer?") }}') ? this.parentElement.submit() : ''">
                                                                 {{ __('Delete') }}
                                                             </button>
-                                                        </form>    
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </td>
@@ -217,12 +218,12 @@
                                                         <form action="{{ route('committees.destroy', $committee) }}" method="post">
                                                             @csrf
                                                             @method('delete')
-                                                            
+
                                                             <a class="dropdown-item" href="{{ route('committees.edit', $committee) }}">{{ __('Edit') }}</a>
                                                             <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this committee?") }}') ? this.parentElement.submit() : ''">
                                                                 {{ __('Delete') }}
                                                             </button>
-                                                        </form>    
+                                                        </form>
                                                 </div>
                                             </div>
                                         </td>
@@ -272,13 +273,13 @@
                                                         <form action="{{ route('articles.destroy', $article) }}" method="post">
                                                             @csrf
                                                             @method('delete')
-                                                            
+
                                                             <a class="dropdown-item" href="{{ route('articles.edit', $article) }}">{{ __('Edit') }}</a>
                                                             <button type="button" class="dropdown-item" onclick="confirm('{{ __("Are you sure you want to delete this article?") }}') ? this.parentElement.submit() : ''">
                                                                 {{ __('Delete') }}
                                                             </button>
-                                                        </form>    
-                                                        
+                                                        </form>
+
                                                     </div>
                                                 </div>
                                             </td>

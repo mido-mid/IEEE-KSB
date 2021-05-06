@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Event;
 use App\Http\Controllers\Controller;
 
 use App\Volunteer;
@@ -32,9 +33,9 @@ class HomeController extends Controller
         $volunteers = Volunteer::orderBy('id','desc')->limit(5)->get();
         $committees = Committee::orderBy('id','desc')->limit(5)->get();
         $admins = User::where('admin', 0)->orderBy('id', 'desc')->limit(5)->get();
-        $roles = Role::orderBy('id','desc')->limit(5)->get();
         $articles = Article::orderBy('id','desc')->limit(5)->get();
+        $events = Event::orderBy('id','desc')->limit(5)->get();
 
-        return view('admin.dashboard',compact('volunteers', 'committees', 'admins', 'articles','roles'));
+        return view('admin.dashboard',compact('volunteers', 'committees', 'admins', 'articles','events'));
     }
 }

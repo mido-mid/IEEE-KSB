@@ -25,7 +25,9 @@ Route::get('/about', 'AboutController@index')->name('about');
 Route::get('/articles', 'ArticleController@index')->name('articles');
 Route::post('/articles', 'ArticleController@filter')->name('articles');
 Route::get('/volunteers', 'VolunteerController@index')->name('volunteers');
-Route::get('/events', 'EventController@index')->name('volunteers');
+Route::post('/volunteers', 'VolunteerController@filter')->name('volunteers');
+Route::get('/events', 'EventController@index')->name('events');
+Route::post('/events', 'EventController@filter')->name('events');
 Route::get('/contact', 'ContactController@index')->name('contacts');
 
 Route::post('/contact', 'ContactController@send')->name('contactpost');
@@ -63,5 +65,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'Admin\ProfileController@update']);
 	Route::post('profile', ['as' => 'profile.updateimage', 'uses' => 'Admin\ProfileController@updateimage']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'Admin\ProfileController@password']);
+
+    Route::get('admin/search/admins', 'Admin\AdminController@search')->name('search-admins');
 });
 

@@ -8,7 +8,7 @@ $(function(){
 
     });
 
-    $('#showvideo').on('hide.bs.modal', function(e) {    
+    $('#showvideo').on('hide.bs.modal', function(e) {
         var $if = $(e.delegateTarget).find('iframe');
         var src = $if.attr("src");
         $if.attr("src", '/empty.html');
@@ -63,8 +63,8 @@ $(function(){
             processData: false,
             contentType: false,
             success:function(data){
-                $('#message').css('display','inline');
-                $('#message').text(data.message);
+                // $('#message').text(data.message);
+                // $('#message').attr('hidden','false');
                 $('#uploaded_image').html(data.uploaded_image);
             },
         });
@@ -73,12 +73,14 @@ $(function(){
 
 
 
-
-    
-
     $("#filterdate").on('change',function(){
 
         $("#articleform").submit();
+    });
+
+    $("#filtercommittee").on('change',function(){
+
+        $("#committeeform").submit();
     });
 
 

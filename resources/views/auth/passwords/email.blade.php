@@ -18,6 +18,8 @@
                             </div>
                         @endif
 
+                        @include('includes.errors')
+
                         <form role="form" method="POST" action="{{ route('password.email') }}">
                             @csrf
 

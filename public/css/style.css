@@ -567,5 +567,11 @@ footer video
                 cursor: pointer;
               }
 
-              
-      
+
+
+.field-icon {
+    float: right;
+    margin-left: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+}

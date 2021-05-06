@@ -12,12 +12,16 @@
                             <div class="col-8">
                                 <h3 class="mb-0">{{ __('Volunteers') }}</h3>
                             </div>
+{{--                            <div class="form-outline col-4" style="margin-right: -20px">--}}
+{{--                                <input type="search" id="search-volunteers" class="form-control" placeholder="search"--}}
+{{--                                       aria-label="Search" />--}}
+{{--                            </div>--}}
                             <div class="col-4 text-right">
                                 <a href="{{ route('volunteers.create') }}" class="btn btn-sm btn-primary">{{ __('Add volunteer') }}</a>
                             </div>
                         </div>
                     </div>
-                    
+
                     @include('includes.errors')
 
                     <div class="col-12">
@@ -33,7 +37,7 @@
 
                     @if(count($volunteers) > 0)
 
-                    <div class="row">
+                    <div class="row" id="dynamic-row">
                         @foreach($volunteers as $volunteer)
                         <div class="col-sm-3" style="margin-top:15px">
                             <div class="card">
@@ -46,7 +50,7 @@
                                     <h5 class="card-title">{{ \Str::limit($volunteer->eng_name, 20) }}</h5>
 
                                     <form  method="POST" action="{{ route('volunteers.destroy', $volunteer) }}">
-                                        
+
                                         @csrf
                                         @method('DELETE')
                                         <a href="{{ route('volunteers.edit', $volunteer) }}" class="btn btn-primary btn-sm">Edit</a>
@@ -56,7 +60,7 @@
                                             {{ __('Delete') }}
                                         </button>
                                     </form>
-                                
+
                                 </div>
                             </div>
                         </div>
@@ -74,7 +78,7 @@
                 </div>
             </div>
         </div>
-            
+
         @include('layouts.footers.auth')
     </div>
 @endsection

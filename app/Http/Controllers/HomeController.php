@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Event;
 use Illuminate\Http\Request;
 
 
@@ -15,9 +16,9 @@ class HomeController extends Controller
 
 	public function index()
 	{
-
-		$articles = Article::orderBy('id', 'desc')->limit(3)->get();
-		$volunteers = Volunteer::orderBy('id', 'desc')->limit(3)->get();
-		return view('home',compact('articles','volunteers'));
+        $articles = Article::orderBy('id', 'desc')->limit(3)->get();
+        $volunteers = Volunteer::orderBy('id', 'desc')->limit(3)->get();
+        $events = Event::orderBy('id', 'desc')->limit(3)->get();
+		return view('home',compact('articles','volunteers','events'));
 	}
 }

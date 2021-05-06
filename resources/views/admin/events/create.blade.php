@@ -34,8 +34,7 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-description">{{ __('description') }}</label>
-                                    <input type="text" name="description" id="input-description" class="form-control form-control-alternative{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="{{ __('description') }}" value="{{ old('description') }}" required>
-
+                                    <textarea name="description" rows="5" id="input-description" class="form-control form-control-alternative{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="{{ __('description') }}"  required>{{ old('description') }}</textarea>
                                     @if ($errors->has('description'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('description') }}</strong>
@@ -44,7 +43,7 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('link') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-password">{{ __('link') }}</label>
-                                    <input type="text" name="link" id="input-link" class="form-control form-control-alternative{{ $errors->has('link') ? ' is-invalid' : '' }}" placeholder="{{ __('link') }}" value="" required>
+                                    <input type="text" name="link" id="input-link" class="form-control form-control-alternative{{ $errors->has('link') ? ' is-invalid' : '' }}" placeholder="{{ __('link') }}" value="{{ old('link') }}" required>
 
                                     @if ($errors->has('link'))
                                         <span class="invalid-feedback" role="alert">

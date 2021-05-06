@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('Volunteer Management')])
 
 @section('content')
-    @include('admin.admins.partials.header', ['title' => __('Add Volunteer')])   
+    @include('admin.admins.partials.header', ['title' => __('Add Volunteer')])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -44,8 +44,8 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('linkedin') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-linkedin">{{ __('LinkedIn') }}</label>
-                                    <input type="text" name="linkedin" id="input-linkedin" class="form-control form-control-alternative{{ $errors->has('linkedin') ? ' is-invalid' : '' }}" placeholder="{{ __('LinkedIn') }}" value="" >
-                                    
+                                    <input type="text" name="linkedin" id="input-linkedin" class="form-control form-control-alternative{{ $errors->has('linkedin') ? ' is-invalid' : '' }}" placeholder="{{ __('LinkedIn') }}" value="{{ old('linkedin') }}" >
+
                                     @if ($errors->has('linkedin'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('linkedin') }}</strong>
@@ -54,8 +54,8 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('gmail') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-gmail">{{ __('Gmail') }}</label>
-                                    <input type="text" name="gmail" id="input-gmail" class="form-control form-control-alternative{{ $errors->has('gmail') ? ' is-invalid' : '' }}" placeholder="{{ __('Gmail') }}" value="" >
-                                    
+                                    <input type="text" name="gmail" id="input-gmail" class="form-control form-control-alternative{{ $errors->has('gmail') ? ' is-invalid' : '' }}" placeholder="{{ __('Gmail') }}" value="{{ old('gmail') }}" >
+
                                     @if ($errors->has('gmail'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('gmail') }}</strong>
@@ -65,7 +65,7 @@
 
                                 <div class="form-group{{ $errors->has('role_id') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-role_id">{{ __('Role') }}</label>
-                                    
+
                                     <select name="role_id" required class="form-control">
                                         @foreach(\App\Role::orderBy('id','desc')->get() as $role)
                                         <option value="{{ $role->id }}">{{ $role->name }}</option>
@@ -81,7 +81,7 @@
 
                                 <div class="form-group{{ $errors->has('committee_id') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-committee_id">{{ __('Committee') }}</label>
-                                    
+
                                     <select name="committee_id" required class="form-control">
                                         @foreach(\App\Committee::orderBy('id','desc')->get() as $committee)
                                         <option value="{{ $committee->id }}">{{ $committee->name }}</option>
@@ -98,7 +98,7 @@
                                 <div class="form-group{{ $errors->has('image') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-image">{{ __('image') }}</label>
                                     <input type="file" name="image" id="input-image" class="form-control form-control-alternative{{ $errors->has('image') ? ' is-invalid' : '' }}" required>
-                                    
+
                                     @if ($errors->has('image'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('image') }}</strong>
@@ -115,7 +115,7 @@
                 </div>
             </div>
         </div>
-        
+
         @include('layouts.footers.auth')
     </div>
 @endsection

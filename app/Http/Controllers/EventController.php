@@ -12,21 +12,21 @@ class EventController extends Controller
 
         $year = "";
         $events = Event::orderBy('id', 'desc')->paginate(9);
-        return view('article',compact('articles','year'));
+        return view('event',compact('events','year'));
     }
 
     public function filter(Request $request)
     {
-        if($request->article_date > 0)
+        if($request->event_date > 0)
         {
-            $year = $request->article_date;
-            $articles = Article::orderBy('id', 'desc')->whereYear('date',$request->article_date)->paginate(9);
+            $year = $request->event_date;
+            $events = Event::orderBy('id', 'desc')->whereYear('start_date',$request->event_date)->paginate(9);
         }
         else
         {
             $year = "";
-            $articles = Article::orderBy('id', 'desc')->paginate(9);
+            $events = Event::orderBy('id', 'desc')->paginate(9);
         }
-        return view('article',compact('articles','year'));
+        return view('event',compact('events','year'));
     }
 }

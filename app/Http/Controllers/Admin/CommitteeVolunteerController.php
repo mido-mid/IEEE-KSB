@@ -60,7 +60,7 @@ class CommitteeVolunteerController extends Controller
                         'photoable_type' => 'App\Volunteer'
                     ]);
                 }
-                return redirect('/admin/committees/'.$committee->id)->withStatus('volunteer successfully created.');
+                return redirect('/admin/committees/'.$committee->id)->withStatus('volunteer successfully added to committee.');
             }
         }
     }

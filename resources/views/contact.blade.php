@@ -27,9 +27,12 @@
               please enter your name , email , subject and message correctly
         </p>
         <p id="message" role="alert" class="alert alert-success" style="font-size:16px;font-family:'lato';padding: 8px 15px;display:none;margin-top:10px"></p>
-        <div class="form-box">
-          <input name="name" type="text" placeholder=" " class="input" required>
-          <label class="label">Name <span style="color:red;">*</span> </label>
+        <div class="form-box {{ $errors->has('name') ? ' has-danger' : '' }}">
+          <input name="name" type="text" placeholder=" " class="input @error('name') is-invalid @enderror" value="{{ old('name') }}" required>
+          <label class="label">Name <span style="color:#ff0000;">*</span> </label>
+            @foreach($errors->all() as $error)
+                <strong>{{ $error }}</strong>
+            @endforeach
         </div>
         <div class="form-box">
           <input placeholder=" " name="email" type="email" class="input" required>

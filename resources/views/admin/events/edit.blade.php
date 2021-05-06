@@ -13,7 +13,7 @@
                                 <h3 class="mb-0">{{ __('Event Management') }}</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="{{ route('events.index') }}" class="btn btn-sm btn-primary">{{ __('list of articles') }}</a>
+                                <a href="{{ route('events.index') }}" class="btn btn-sm btn-primary">{{ __('list of events') }}</a>
                             </div>
                         </div>
                     </div>
@@ -36,8 +36,7 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-description">{{ __('description') }}</label>
-                                    <input type="text" name="description" id="input-description" class="form-control form-control-alternative{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="{{ __('description') }}" value="{{ old('description', $event->description) }}" required>
-
+                                    <textarea name="description" rows="5" id="input-description" class="form-control form-control-alternative{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="{{ __('description') }}"  required>{{ old('description',$event->description) }}</textarea>
                                     @if ($errors->has('description'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('description') }}</strong>

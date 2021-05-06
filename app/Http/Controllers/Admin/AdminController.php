@@ -111,4 +111,11 @@ class AdminController extends Controller
 
         return redirect()->route('admins.index')->withStatus(__('Admin successfully deleted.'));
     }
+
+    public function search(Request $request)
+    {
+        $query = $request->search_query;
+        $admins = User::where('name','like','%'.$query."%")->get();
+        return response()->json($admins);
+    }
 }

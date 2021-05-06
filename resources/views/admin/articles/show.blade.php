@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('Articles Management')])
 
 @section('content')
-    @include('admin.admins.partials.header', ['title' => __('Preview Articles')])   
+    @include('admin.admins.partials.header', ['title' => __('Preview Articles')])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -45,7 +45,7 @@
                 </div>
             </div>
         </div>
-        
+
         @include('layouts.footers.auth')
     </div>
 @endsection

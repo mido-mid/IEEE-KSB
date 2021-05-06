@@ -24,13 +24,28 @@
         <div class="row mx-5">
           <form id="articleform" action="{{route('articles')}}" method="POST" >
 
-          @csrf
+            @csrf
             <select id="filterdate" name="article_date" class="custom-select filter-input ml-auto">
-              <option selected>Filter by year</option>
-              <option value="0">All Articles</option>
-              <option value="2020">2020</option>
-              <option value="2019">2019</option>
-              <option value="2018">2018</option>
+              <option selected disabled>Filter by year</option>
+                <option value="0">All Articles</option>
+                <?php
+                    function yearDropdownMenu($start_year, $end_year = null) {
+                        // curret year as end year
+                        $end_year = is_null($end_year) ? date('Y') : $end_year;
+                        // range of years
+                        $r = range($start_year, $end_year);
+                        //create the HTML select
+                        $select = '';
+                        foreach( $r as $year )
+                        {
+                            $select .= "<option value=\"$year\"";
+                            $select .= ">$year</option>\n";
+                        }
+                        $select .= '</select>';
+                        return $select;
+                    }
+                    echo yearDropdownMenu(2000);
+                ?>
             </select>
           </form>
         </div>

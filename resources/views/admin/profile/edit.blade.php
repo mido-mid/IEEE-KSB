@@ -28,7 +28,7 @@
                     </div>
                     <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
                         <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-info mr-4" id="upload_btn" href=""><i class="fas fa-cloud-upload-alt"></i> upload</a>
+                            <a class="btn btn-sm btn-info" id="upload_btn" href="">upload</a>
                             <a href="#" class="btn btn-sm btn-default float-right">{{ __('Message') }}</a>
                         </div>
                     </div>
@@ -75,7 +75,6 @@
                     </div>
                     <div class="card-body">
 
-                    <p id="message" class="alert alert-success alert-dismissible fade show" role="alert" style="padding:5px;margin-bottom:10px;display:none"></p>
                         <form method="post" action="{{ route('profile.update') }}" autocomplete="off">
                             @csrf
                             @method('put')
@@ -137,7 +136,8 @@
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('old_password') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-current-password">{{ __('Current Password') }}</label>
-                                    <input type="password" name="old_password" id="input-current-password" class="form-control form-control-alternative{{ $errors->has('old_password') ? ' is-invalid' : '' }}" placeholder="{{ __('Current Password') }}" value="" required>
+                                    <input type="password" name="old_password" id="password" class="form-control form-control-alternative{{ $errors->has('old_password') ? ' is-invalid' : '' }}" placeholder="{{ __('Current Password') }}" value="" required>
+                                    <span onclick="viewPassword()" id="pass-status" style="margin-top: -30px" class="fa fa-fw fa-eye field-icon"></span>
 
                                     @if ($errors->has('old_password'))
                                         <span class="invalid-feedback" role="alert">

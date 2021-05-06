@@ -13,6 +13,19 @@
   <main>
     <section class="section-our-team">
       <div class="container">
+          <div class="row mx-5">
+              <form id="committeeform" action="{{route('volunteers')}}" method="POST" >
+
+                  @csrf
+                  <select id="filtercommittee" name="committee" class="custom-select filter-input ml-auto">
+                      <option selected disabled>Filter by committee</option>
+                      <option value="0">All Volunteers</option>
+                      @foreach($committees as $committee)
+                        <option value="{{$committee->id}}">{{$committee->name}}</option>
+                      @endforeach
+                  </select>
+              </form>
+          </div>
       @if(count($volunteers) > 0)
         <div class="row">
         @foreach($volunteers as $volunteer)
@@ -32,7 +45,7 @@
                             <div class="d-flex justify-content-between">
                               <div>
                                 <span class="member-name d-block text-capitalize">{{$volunteer->eng_name}}</span>
-                                <span class="member-role text-capitalize d-block">{{$volunteer->role->name}}</span>
+                                <span class="member-role text-capitalize d-block">{{$volunteer->role->name}} in {{$volunteer->committee->name}} committee</span>
                               </div>
                               <i class="fas fa-sort-down arrow-icon"></i>
                             </div>

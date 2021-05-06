@@ -17,15 +17,23 @@
         <div class="row">
           <div class="col-12">
             <div class="text-box text-center">
-              <h2 class="heading-secondary pb-5">who we are?</h2>
+              <h2 class="heading-secondary pb-5">IEEE Global</h2>
               <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita modi, rem odio autem quisquam accusantium dolorem quo nisi vel laborum? Dignissimos unde voluptatem id, tempore qui animi quibusdam eveniet dolores?</p>
             </div>
           </div>
         </div>
+      <div class="row">
+          <div class="col-12">
+              <div class="text-box text-center">
+                  <h2 class="heading-secondary pb-5">IEEE Egypt Section</h2>
+                  <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita modi, rem odio autem quisquam accusantium dolorem quo nisi vel laborum? Dignissimos unde voluptatem id, tempore qui animi quibusdam eveniet dolores?</p>
+              </div>
+          </div>
+      </div>
         <div class="row">
           <div class="col-12">
             <div class="text-box text-center">
-              <h2 class="heading-secondary pb-5">what do we do?</h2>
+              <h2 class="heading-secondary pb-5">IEEE ksb</h2>
               <p class="paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita modi, rem odio autem quisquam accusantium dolorem quo nisi vel laborum? Dignissimos unde voluptatem id, tempore qui animi quibusdam eveniet dolores?</p>
             </div>
           </div>
@@ -58,7 +66,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="d-flex justify-content-center">
-              <img src="{{ asset('images') }}/12.jpg" class="w-25 d-block" alt="">
+              <img src="{{ asset('images') }}/mission-1.png" class="w-25 d-block" alt="">
             </div>
           </div>
           <div class="col-12 pt-5">
@@ -73,16 +81,29 @@
 
     <section class="about-ieee">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <img src="{{ asset('images') }}/volunteer-1.png" class="img-fluid" alt="">
+          <div class="text-box">
+              <h2 class="heading-secondary pb-5 text-center">High Board</h2>
           </div>
-          <div class="col-lg-8 pt-sm-5">
-            <div class="text-box">
-              <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic molestiae culpa vitae veritatis aspernatur, minus illum non asperiores et sapiente odit eveniet similique, ad sint sed nobis aperiam quam accusantium fugiat enim numquam, voluptas cupiditate? Iure, corporis dolorem! Inventore vitae minus earum dolorem. Dicta, corporis exercitationem. Corrupti qui modi </p>
+        @if(count($volunteers) > 0)
+            <div class="row">
+                @foreach($volunteers as $volunteer)
+                    <div class="col-lg-3 col-md-12">
+                        @if($volunteer->photo)
+                            <div class="volunteer-img-container volunteer-img-container-1" style="background-image: url('{{ asset('images') }}/{{$volunteer->photo->filename}}');">
+                        @else
+                            <div class="volunteer-img-container volunteer-img-container-1">
+                        @endif
+                                <div class="text-box-container">
+                                    <div class="text-box"><span class="volunteer-name">{{$volunteer->eng_name}}</span><span class="volunteer-job">{{$volunteer->role->name}}</span></div>
+                                </div>
+                            </div>
+                    </div>
+                @endforeach
             </div>
-          </div>
-        </div>
+
+        @else
+            <p class="lead text-center"> No volunteers found</p>
+        @endif
       </div>
     </section>
   </main>

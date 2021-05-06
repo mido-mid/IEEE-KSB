@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Event;
 use App\Http\Controllers\Controller;
 use App\Photo;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -45,8 +46,8 @@ class EventController extends Controller
             'title' => ['required','min:7','max:100','not_regex:/([%\$#\*<>]+)/'],
             'description' => ['required','min:10','max:200','not_regex:/([%\$#\*<>]+)/'],
             'link' => 'required|url',
-            'start_date' => 'required|date|after:today',
-            'end_date' => 'required|date|after:start_date',
+            'start_date' => 'required|date|after_or_equal:today',
+            'end_date' => 'required|date|after_or_equal:start_date',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
 
@@ -113,9 +114,9 @@ class EventController extends Controller
             'title' => ['required','min:7','max:100','not_regex:/([%\$#\*<>]+)/'],
             'description' => ['required','min:10','max:200','not_regex:/([%\$#\*<>]+)/'],
             'link' => 'required|url',
-            'start_date' => 'required|date|after:today',
-            'end_date' => 'required|date|after:start_date',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'start_date' => 'required|date|after_or_equal:today',
+            'end_date' => 'required|date|after_or_equal:start_date',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
 
         $this->validate($request, $rules);
